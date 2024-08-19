@@ -7,7 +7,7 @@ Server side rendered component to Cradle CMS fetching article data in JSON forma
 Add file `article.liquid` to the `components` folder. 
 
 ### 2. JSON-article template
-Add the article template `article.json.liquid` for JSON.
+Add the article template `article.json.liquid` in folder `templates` for JSON output.
 
 ### 3. Include component code
 Include the component code to the site with tag `{% component 'article' %}`, this tag can be included directly to the site but then **need `script` tags added**.
