@@ -1,5 +1,5 @@
-## Description
-This is a server side rendered component to Cradle CMS which will use data for an article.
+## Server side rendered component
+This is a server side rendered component to Cradle CMS article data in JSON format.
 
 ## Setup steps
 
