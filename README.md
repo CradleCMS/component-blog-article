@@ -10,7 +10,7 @@ Add file `article.liquid` to the `components` folder.
 Add the article template `article.json.liquid` for JSON.
 
 ### 3. Include component code
-Include the component code to the site with tag `{% component 'article' %}`, this tag can be included directly to the site but then the component needs to *contain `script` tags*.
+Include the component code to the site with tag `{% component 'article' %}`, this tag can be included directly to the site but then **need `script` tags added**.
 
 A good practise to dcrease the payload and utilize the browser cache is to include all the components to the same js-file in `assets` folder and include in the theme with `{{ 'components.js.liquid' | asset_url | script_tag }}`.
 
