@@ -1,5 +1,5 @@
 ## Server side rendered component
-This is a server side rendered component to Cradle CMS fetching article data in JSON format.
+Server side rendered component to Cradle CMS fetching article data in JSON format.
 
 ## Setup steps
 
