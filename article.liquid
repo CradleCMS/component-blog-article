@@ -1,0 +1,36 @@
+class BlogArticle extends HTMLElement {
+  constructor() {
+    super();
+    if (!this.shadowRoot) {
+      console.log(this.getAttribute('product'));
+      const url = this.getAttribute('url');
+      fetch(url+"?template=json").then(res => {
+          return res.json()
+      }).then(article => {
+          console.log("article", article);
+          const shadowRoot = this.attachShadow({ mode: 'open' });
+          const template = document.createElement('template');
+          document
+          template.innerHTML = `
+          <style>
+          </style>
+          <header>
+            <slot name="header">${article.title}</slot>
+          </header>
+          <section>
+            <slot name="content">${article.html}</slot>
+          </section>
+          <footer>
+            <slot name="footer">${article.author}</slot>
+          </footer>
+          `;
+          
+          shadowRoot.appendChild(template.content.cloneNode(true));
+      }).catch( err => {
+          console.error("fetch article", err);
+      })
+    }
+  }
+}
+
+customElements.define('blog-article', BlogArticle);
