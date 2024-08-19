@@ -4,14 +4,15 @@ This is a server side rendered component to Cradle CMS which will use data for a
 ## Setup steps
 
 ### 1. Add component file
-Add file `article.liquid` to the `components` folder
+Add file `article.liquid` to the `components` folder. 
 
 ### 2. JSON-article template
 Add the article template `article.json.liquid` for JSON.
 
 ### 3. Include component code
-Include the component code to the site with tag `{% component 'article' %}`. 
-A good practise is to include all the components to the same file and when cached by the browser will decreate the payload of the site, this would be done by creating a js-file in assets where all components could be added.
+Include the component code to the site with tag `{% component 'article' %}`, this tag can be included directly to the site but then the component needs to *contain `script` tags*.
+
+A good practise to dcrease the payload and utilize the browser cache is to include all the components to the same js-file in `assets` folder and include in the theme with `{{ 'components.js.liquid' | asset_url | script_tag }}`.
 
 ### 4. Use component on site
-Use the component at the desired place by including `<blog-article url="{{ 'articles/toc' | url }}"></blog-article>`, note that the URL contains the `articles` slug as it adds the context to the handle.
+Use the component at the desired place by including `<blog-article url="{{ 'articles/toc' | url }}"></blog-article>`, the URL contains the `articles` slug as it adds the article-context to the handle.
