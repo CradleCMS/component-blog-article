@@ -3,7 +3,6 @@ class BlogArticle extends HTMLElement {
   constructor() {
     super();
     if (!this.shadowRoot) {
-      console.log(this.getAttribute('product'));
       const url = this.getAttribute('url');
       fetch(url+"?template=json").then(res => {
           return res.json()
